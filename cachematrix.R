@@ -1,7 +1,7 @@
 #First function will compute inverse of matrix passed as an input
 makeCacheMatrix <- function(a = matrix()) {
   inv <- NULL
-  set <- function(y){
+  set <- function(b){
     a <<- b
     inv <<- NULL
   }
