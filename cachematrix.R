@@ -1,11 +1,11 @@
 #First function will compute inverse of matrix passed as an input
-makeCacheMatrix <- function(x = matrix()) {
+makeCacheMatrix <- function(a = matrix()) {
   inv <- NULL
   set <- function(y){
-    x <<- y
+    a <<- b
     inv <<- NULL
   }
-  get <- function() x
+  get <- function() a
   setInverse <- function(solveMatrix) inv <<- solveMatrix
   getInverse <- function() inv
   list(set = set, get = get, setInverse = setInverse, getInverse = getInverse)
@@ -14,14 +14,14 @@ makeCacheMatrix <- function(x = matrix()) {
 #Second function function will check if inverse was previously cached :
 #If so, already solved inverse will be output
 #Otherwise,setInverse is called and inv is solved
-cacheSolve <- function(x, ...) {
-  inv <- x$getInverse()
+cacheSolve <- function(a, ...) {
+  inv <- a$getInverse()
   if(!is.null(inv)){
     message("getting cached data")
     return(inv)
   }
   data <- x$get()
   inv <- solve(data)
-  x$setInverse(inv)
+  a$setInverse(inv)
   inv      
 }
